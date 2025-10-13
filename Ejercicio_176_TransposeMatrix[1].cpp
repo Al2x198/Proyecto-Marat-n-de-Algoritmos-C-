@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int r,c; cout<<"Filas y columnas: "; cin>>r>>c;
+    int a[50][50];
+    for(int i=0;i<r;i++) for(int j=0;j<c;j++) cin>>a[i][j];
+    cout<<"Transpuesta:\n";
+    for(int j=0;j<c;j++){ for(int i=0;i<r;i++) cout<<a[i][j]<<" "; cout<<"\n"; }
+    return 0;
+}
