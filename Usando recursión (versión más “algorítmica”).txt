@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+void contarDe15(int actual, int fin) {
+    if (actual > fin) return; // caso base
+    cout << actual << " ";
+    contarDe15(actual + 15, fin); // llamada recursiva
+}
+
+int main() {
+    int inicio, fin;
+    cout << "Ingresa el numero inicial: ";
+    cin >> inicio;
+    cout << "Ingresa el numero final: ";
+    cin >> fin;
+
+    cout << "\nContando de 15 en 15:\n";
+    contarDe15(inicio, fin);
+
+    cout << endl;
+    return 0;
+}

@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int inicio, fin;
+
+    cout << "Ingresa el numero inicial: ";
+    cin >> inicio;
+
+    cout << "Ingresa el numero final: ";
+    cin >> fin;
+
+    cout << "\nContando de 15 en 15:\n";
+
+    for (int i = inicio; i <= fin; i += 15) {
+        cout << i << " ";
+    }
+
+    cout << endl;
+    return 0;
+}
