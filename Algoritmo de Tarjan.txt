@@ -1,0 +1,22 @@
+void tarjan(int u, int& time, vector<vector<int>>& adj, vector<int>& disc, vector<int>& low, stack<int>& st, vector<bool>& inStack, vector<vector<int>>& scc) {
+    disc[u] = low[u] = time++;
+    st.push(u); inStack[u] = true;
+    for (int v : adj[u]) {
+        if (disc[v] == -1) {
+            tarjan(v, time, adj, disc, low, st, inStack, scc);
+            low[u] = min(low[u], low[v]);
+        } else if (inStack[v]) {
+            low[u] = min(low[u], disc[v]);
+        }
+    }
+    if (low[u] == disc[u]) {
+        vector<int> component;
+        int v;
+        do {
+            v = st.top(); st.pop();
+            inStack[v] = false;
+            component.push_back(v);
+        } while (u != v);
+        scc.push_back(component);
+    }
+}
